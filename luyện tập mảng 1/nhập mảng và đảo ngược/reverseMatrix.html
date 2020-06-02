@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = +prompt("Nhập độ dài mảng:");
+        let arr = [];
+        for (let i = 0; i <= n-1; i++){
+            arr[i] = +prompt(`Nhập phần tử thứ ${i}`);
+            arr.push(arr[i]);
+            arr.pop();
+        }
+        console.log(`Mảng vừa nhập là: ${arr}`);
+        console.log(`Mảng đảo ngược của mảng vừa nhập là: ${arr.reverse()}`);
+    </script>
+</body>
+</html>
