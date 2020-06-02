@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+            let n = +prompt("Nhập độ dài mảng:");
+            let count = 0;
+            let arr = [];
+            for (let i = 0; i <= n - 1; i++) {
+                arr[i] = +prompt(`Nhập phần tử thứ ${i}`);
+                arr.push(arr[i]);
+                arr.pop();
+                if (arr[i] < 0){
+                    count++;
+                }
+            }
+            console.log(`Mảng vừa nhập là: ${arr} và số phần tử nhỏ hơn 0 là: ${count}`);
+    </script>
+</body>
+
+</html>
