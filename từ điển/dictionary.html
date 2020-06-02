@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="field" />
+    <button type="button" onclick="search()">Translate</button>
+    <script>
+        let english = ["dog", "cat", "cow", "bird", "fish"];
+        let vietnam = ["Chó", "Mèo", "Bò", "Chim", "Cá"];
+        function search(a){
+            a = document.getElementById("field").value;
+            for (let i=0; i<english.length; i++){
+                    if (a === english[i]){
+                        document.write(vietnam[i]) ;
+                    }  
+                } return false;
+        }
+            for (i=0; i<vietnam.length; i++){
+            }
+    </script>
+</body>
+</html>
