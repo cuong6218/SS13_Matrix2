@@ -9,24 +9,26 @@
 
 <body>
     <script>
-        let n = +prompt("Nhập độ dài mảng:");
-        let arr = [];
-        for (let i = 0; i <= n - 1; i++) {
-            arr[i] = +prompt(`Nhập phần tử thứ ${i}`);
-            arr.push(arr[i]);
-            arr.pop();
+        function inputMatrix(n) {
+            n = +prompt("Nhập độ dài mảng:");
+            for (let i = 0; i <= n - 1; i++) {
+                arr[i] = +prompt(`Nhập phần tử thứ ${i}`);
+                str +=arr[i];
+            }
+            console.log(`Mảng vừa nhập là: ${str}`);
         }
-
-        let item = +prompt("Nhập phần tử cần tìm:");
-        let guess = arr.includes(item);
-        console.log(`Mảng vừa nhập là: ${arr}`);
-        if (guess) {
-            console.log("V is in the array");
+        function findItem(item) {
+            item = +prompt("Nhập phần tử cần tìm:");
+            let guess = arr.includes(item);
+            console.log(`Giá trị cần tìm là: ${item}`);
+            if (guess) {
+                console.log("V is in the array");
+            }
+            else console.log("V is not in the array");
         }
-        else console.log("V is not in the array")
-
-
-
+        
+        inputMatrix();
+        findItem();
     </script>
 </body>
 

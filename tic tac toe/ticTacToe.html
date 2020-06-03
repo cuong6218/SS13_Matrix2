@@ -6,8 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    table, tr, td{
+        border:1px solid black;
+    }
+    td{
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        font-size: 35px;
+    }
+</style>
 <body>
-    
+    <input id="row" />
+    <input id="col" />
+    <button onclick="displayBoard()">Display Caro</button>
+    <table id="caro"></table>
+    <script>
+        let turn = 1;
+        function displayBoard() {
+            let row = document.getElementById('row').value;
+            let col = document.getElementById('col').value;
+            let board = document.getElementById('caro');
+            let str = "";
+            for (let i = 0; i < row; i++) {
+                str += "<tr>";
+                for (let j = 0; j < col; j++) {
+                    str += `<td id="cell-${i}-${j}" onclick="clickCell(${i},${j})"></td>`; 
+                }
+                str += "</tr>";
+            }
+            board.innerHTML = str;
+        }
+        function clickCell(x,y){
+            let cell = document.getElementById(`cell-${x}-${y}`);
+            if (cell.innerHTML ==""){
+                if (turn ==1){
+                    cell.innerHTML = "X";
+                    turn = 2;
+                } else if (turn == 2) {
+                    cell.innerHTML = "O";
+                    turn = 1;
+                }
+            }
+            checkWin(x,y);
+        }
+        function getCellValue(x,y){
+            let cellValue = document.getElementById("cell-${i}-${j}").innerHTML;
+            return cellValue;
+        }
+        function checkWin(x,y){
+            checkCol(x,y);
+            checkRow(x,y);
+            // checkCheo1(x,y);
+            // checkCheo2(x,y);
+        }
+        function checkCol(x,y){
+            let count = 1;
+            let i = 1;
+            while(getCellValue(x,y) == getCellValue(x+i,y)){
+                count++;
+                i++;
+            }
+            let j = 1;
+            while(getCellValue(x,y) == getCellValue(x-i,y)){
+                count++;
+                j++;
+            }
+            gameOver(count);
+        }
+        function checkRow(x,y){
+            let count = 1;
+            let i = 1;
+            while(getCellValue(x,y) == getCellValue(x,y+i)){
+                count++;
+                i++;
+            }
+            let j = 1;
+            while(getCellValue(x,y) == getCellValue(x,y-i)){
+                count++;
+                j++;
+            }
+            gameOver(count);
+        }
+        function gameOver(count){
+            if (count>=5){
+                alert ("Game Over");
+            }
+        }
+    </script>
 </body>
 
 </html>

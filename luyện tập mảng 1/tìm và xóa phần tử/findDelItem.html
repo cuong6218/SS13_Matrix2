@@ -9,28 +9,15 @@
 
 <body>
     <script> 
-        let arr = [];
-        function inputMatrix(n) {
-            n = +prompt("Nhập độ dài mảng:");
-            for (let i = 0; i <= n - 1; i++) {
-                arr[i] = +prompt(`Nhập phần tử thứ ${i}`);
-                arr.push(arr[i]);
-                arr.pop();
+        let arr = [1,2,3,4,5,4,7,8,9,10];
+        
+        let v = +prompt('Nhập giá trị cần tìm:');
+        for (let i = 0; i < arr.length; i++){
+            if (v == arr[i]){
+                arr.splice(i,1);
             }
         }
-
-        function findItem(item) {
-            item = +prompt("Nhập phần tử cần tìm:");
-            let guess = arr.includes(item);
-            console.log(`Giá trị cần tìm là: ${item}`);
-            if (guess) {
-                console.log("V is in the array");
-            }
-            else console.log("V is not in the array")
-        }
-        console.log(inputMatrix());
-        console.log(`Mảng vừa nhập là: ${arr}`);
-        console.log(findItem());
+        document.write(arr);
     </script>
 </body>
 
