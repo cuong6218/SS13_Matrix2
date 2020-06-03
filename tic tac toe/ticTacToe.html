@@ -52,7 +52,7 @@
             checkWin(x,y);
         }
         function getCellValue(x,y){
-            let cellValue = document.getElementById("cell-${i}-${j}").innerHTML;
+            let cellValue = document.getElementById("cell-${x}-${y}").innerHTML;
             return cellValue;
         }
         function checkWin(x,y){
@@ -90,7 +90,7 @@
             gameOver(count);
         }
         function gameOver(count){
-            if (count>=5){
+            if (count==5){
                 alert ("Game Over");
             }
         }

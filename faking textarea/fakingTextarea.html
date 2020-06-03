@@ -10,8 +10,13 @@
     <textarea id="field" style="width: 300px; height:200px; font-size:30px;" onkeydown="funnyType()"></textarea>
     <script>
         
-        function funnyType(){
-            let anything = ["T", "Ô", "I",  "L", "À", "M", "Ộ", "T",  "Đ", "Ứ", "A", "N", "G", "Ố", "C", "!", "!"];
+        function funnyType(str1){
+            let anything = ["T", "Ô", "I", " ", "L", "À"," ", "M", "Ộ", "T", " ", "Đ", "Ứ", "A"," ","N", "G", "Ố", "C", "!", "!"];
+            let field = document.getElementById('field');
+            for (i = 0; i < anything.length; i++){
+                str1 += anything[i];
+                console.log(str1);
+            }
         }
     </script>
 </body>
