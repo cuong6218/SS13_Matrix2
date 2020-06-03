@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Type anything slowly</h1>
-    <textarea id="field" style="width: 300px; height:200px; font-size:30px;" onkeydown="funnyType()"></textarea>
+    <textarea id="field" style="width: 300px; height:200px; font-size:30px;" oninput="funnyType()"></textarea>
     <script>
         
-        function funnyType(str1){
-            let anything = ["T", "Ô", "I", " ", "L", "À"," ", "M", "Ộ", "T", " ", "Đ", "Ứ", "A"," ","N", "G", "Ố", "C", "!", "!"];
-            let field = document.getElementById('field');
-            for (i = 0; i < anything.length; i++){
-                str1 += anything[i];
-                console.log(str1);
+        let anything = ["T", "Ô", "I", " ", "L", "À", " ", "M", "Ộ", "T", " ", "Đ", "Ứ", "A", " ", "N", "G", "Ố", "C", "!", "!"];
+        let index = 0;
+        let str = '';
+        function funnyType() {
+            let field = document.getElementById('field')
+            field.value = '';
+            if (index < anything.length) {
+                let value = anything[index];
+                str +=value;
+                index++;
+                field.value += str;
+            } else {
+                index=0;
+                str = '';
             }
+
         }
     </script>
 </body>
+
 </html>

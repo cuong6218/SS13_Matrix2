@@ -52,14 +52,14 @@
             checkWin(x,y);
         }
         function getCellValue(x,y){
-            let cellValue = document.getElementById("cell-${x}-${y}").innerHTML;
+            let cellValue = document.getElementById(`cell-${x}-${y}`).innerText;
             return cellValue;
         }
         function checkWin(x,y){
             checkCol(x,y);
             checkRow(x,y);
-            // checkCheo1(x,y);
-            // checkCheo2(x,y);
+            checkCheo1(x,y);
+            checkCheo2(x,y);
         }
         function checkCol(x,y){
             let count = 1;
@@ -89,6 +89,34 @@
             }
             gameOver(count);
         }
+        // function checkCheo1(x,y){
+        //     let count = 1;
+        //     let i = 1;
+        //     while(getCellValue(x,y) == getCellValue(x-i,y+j)){
+        //         count++;
+        //         i++;
+        //     }
+        //     let j = 1;
+        //     while(getCellValue(x,y) == getCellValue(x+i,y-j)){
+        //         count++;
+        //         j++;
+        //     }
+        //     gameOver(count);
+        // }
+        // function checkCheo2(x,y){
+        //     let count = 1;
+        //     let i = 1;
+        //     while(getCellValue(x,y) == getCellValue(x-i,y-j)){
+        //         count++;
+        //         i++;
+        //     }
+        //     let j = 1;
+        //     while(getCellValue(x,y) == getCellValue(x+i,y+j)){
+        //         count++;
+        //         j++;
+        //     }
+        //     gameOver(count);
+        // }
         function gameOver(count){
             if (count==5){
                 alert ("Game Over");
