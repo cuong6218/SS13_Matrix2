@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         let str1 = prompt("Nhập vào chuỗi thứ nhất:");
         let str2 = prompt("Nhập vào chuỗi thứ hai:");
         let arr1 = str1.split("");
         let arr2 = str2.split("");
+        function checkMatrix(arr1, arr2) {
+            if (arr1.length == arr2.length) {
+                for (let i = 0; i < arr1.length; i++) {
+                    if (arr1[i] !== arr2[i]) {
+                        return false;
+                    }
+                } return true;
+            } return false;
+        }
+        if (checkMatrix(arr1,arr2)){
+            document.write("Hai chuỗi giống nhau");
+        } else document.write("Hai chuỗi không giống nhau");
     </script>
 </body>
+
 </html>
